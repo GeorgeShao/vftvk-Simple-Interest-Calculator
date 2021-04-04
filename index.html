@@ -1,16 +1,50 @@
+<!DOCTYPE html>
+
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Web App - Simple Interest Calculator</title>
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <div>
+            <h1>Simple Interest Calculator</h1>
+            <table>
+                <tr>
+                    <td><a onchange="validnum()">Amount</a></th>
+                    <td><input type="number" id="principal"></th>
+                </tr>
+                <tr>
+                    <td><a>Interest Rate</a></th>
+                    <td><input onchange="readval()" onmouseover="readval()" type="range" min="1" max="10" step="0.25" id="rate"><span id="rateval"> 5% </span></th>
+                </tr>
+                <tr>
+                    <td><a>No. of Years</a></th>
+                    <td>
+                        <select id="years" name="years">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <a><button onclick="compute()">Compute Interest</button></a>
+                        <a><span id="result"></span></a>
+                    </td>
+                </tr>
+            </table>
+            <footer>Ⓒ Everyone Can Get Rich</footer>
+        </div>
     </body>
 </html>
